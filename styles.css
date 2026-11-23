@@ -14,7 +14,6 @@
 
 .header {
     font-size: 30px;
-    font-weight: bold;
 }
 
 .footer {
@@ -27,4 +26,8 @@
 
 .sidebar ul {
     padding-left: 20px;
+}
+
+a, a:visited {
+    color: darkgreen;
 }

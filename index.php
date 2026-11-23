@@ -20,10 +20,9 @@ if (!$isRouteFound) {
     return;
 }
 
-unset($matches);
+array_shift($matches);
 
-$controllerName = $controllerAndAction;
-$actionName = $controllerAndAction;
+list($controllerName, $actionName) = $controllerAndAction;
 
 $controller = new $controllerName();
 $controller->$actionName(...$matches);

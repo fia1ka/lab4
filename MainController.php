@@ -11,25 +11,15 @@ class MainController
 
     public function main()
     {
-        // $title не передаем -> сработает значение по умолчанию "Мой блог"
-        $this->view->renderHtml('template.php', [
-            'content' => '<h2>Статья 1</h2><p>Всем привет, это текст первой статьи</p><hr><h2>Статья 2</h2><p>Всем привет, это текст второй статьи</p>'
-        ]);
+        // title не передаём -> подставится "Мой блог" по умолчанию
+        $this->view->renderHtml('main.php');
     }
 
     public function sayHello(string $name)
     {
-        $this->view->renderHtml('template.php', [
-            'title'   => 'Страница приветствия',
-            'content' => '<h2>Привет, ' . htmlspecialchars($name) . '!</h2>'
-        ]);
-    }
-
-    public function sayBye(string $name)
-    {
-        $this->view->renderHtml('template.php', [
-            'title'   => 'Страница прощания',
-            'content' => '<h2>Пока, ' . htmlspecialchars($name) . '!</h2>'
+        $this->view->renderHtml('hello.php', [
+            'name'  => $name,
+            'title' => 'Страница приветствия'
         ]);
     }
 }
